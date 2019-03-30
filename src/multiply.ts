@@ -1,4 +1,4 @@
-import { byte, word, RRCA, ADD16, RLA, SL16, LONG } from "./lib";
+import { byte, word, RRCA, ADD16, RLA, SL16, LONG, LWORD } from "./lib";
 
 // Multiply:                        ; this routine performs the operation HL=D*E
 //   ld hl,0                        ; HL is used to accumulate the result
@@ -14,14 +14,14 @@ import { byte, word, RRCA, ADD16, RLA, SL16, LONG } from "./lib";
 
 export const mult = (d: byte, e: byte): word => {
   let hl = 0;
-  if (d == 0) {
+  if (d != 0) {
     let b = d;
     do {
       hl += e;
       b--;
     } while (b > 0);
   }
-  return hl;
+  return LWORD(hl);
 }
 
 // Divide:                          ; this routine performs the operation BC=HL/E

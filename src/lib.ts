@@ -6,6 +6,8 @@ export const BOOL = (v:byte):byte => v ? 1 : 0;
 export const RRCA = (a:byte):[byte, byte] => [a >> 1 | (a & 1) << 7, BOOL(a & 1)];
 export const LBYTE = (v:word) => v & 0xFF;
 export const HBYTE = (v:word) => v >> 8;
+export const LWORD = (v:word) => v & 0xFFFF;
+export const HWORD = (v:word) => v >> 16;
 export const WORD = (h:byte, l:byte):word => h << 8 & l;
 export const LONG = (h:word, l:word):long => h << 16 & l;
 
