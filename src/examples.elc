@@ -1,0 +1,99 @@
+let
+    test x = iff x (\x -&gt; x) (\y -&gt; y)
+  in
+    test false;
+
+(1 + 1) * 1 ** 2
+
+[];[1];[1,2]
+
+\x y -&gt; x
+
+\x y -&gt; x + y
+
+\x y -&gt; (x * x) + y
+
+def x = 1; x;
+
+let x = 1 in x;
+
+let
+  rec x = 1 ;
+  y = 2
+in
+  if x then x + y else x - y;
+
+            // Comment 0
+def x = 1;  // comment 1
+x + 1       // comment 2
+            // Comment 3
+
+let x = y in x;
+
+(\ a -&gt; 1) 2
+
+let x y = \z -&gt; z in a
+
+def identity x = x;
+
+def cond thenExpr elseExpr predicate = predicate thenExpr elseExpr;
+
+def apply func arg = func arg;
+
+def selfApply s = s s;
+
+def selectFirst first second = first;
+
+def selectSecond first second = second;
+
+def makePair first second func = func first second;
+
+def cond thenExpr elseExpr predicate = predicate thenExpr elseExpr;
+
+def true = selectFirst;
+
+def false = selectSecond;
+
+def not predicate = cond false true predicate;
+
+def and x y = cond y false x;
+
+def or x y = cond true y x;
+
+def iff predicate thenExpr elseExpr =
+
+cond thenExpr elseExpr predicate;
+
+selfApply (\ x -&gt; x)
+
+let
+  i = \ x -&gt; x;
+  j = identity;
+in (identity j);
+
+false || true
+
+!!false
+
+(x 1 2) + 2
+
+(1) + 2
+
+let
+    test x = a 1 + 1
+  in
+    (test false);
+x 1 2 3; x + y + z
+
+1 + 2 + 3 + 4
+
+x x + 1
+
+(a + 1) : x : y
+
+(makePair (\x -&gt; x) (\y -&gt; y)) selectSecond
+
+let
+   i = \x -&gt; x;
+   j = \y -&gt; y;
+in i j;

@@ -1,0 +1,490 @@
+Carry Flag
+
+    Carry Flag Complement
+        CCF             	Complement carry flag.
+
+    Carry Flag Set
+        SCF             	Set carry flag (C=1).
+
+Accumulator
+
+    Add
+        ADD   A, r       	Add register r to accumulator.
+        ADD   A, n       	Add value n to accumulator.
+        ADD   A,(HL)     	Add location (HL) to accumulator.
+        ADD   A,(IX+d)   	Add location (IX+d) to accumulator.
+        ADD   A,(IY+d)  	Add location (IY+d) to accumulator.
+
+        Add with carry
+            ADC   A, r       	Add with carry register r to accumulator.
+            ADC   A, n       	Add with carry value n to accumulator.
+            ADC   A,(HL)     	Add with carry location (HL) to accumulator.
+            ADC   A,(IX+d) 	Add with carry location (IX+d) to accumulator.
+            ADC   A,(IY+d) 	Add with carry location (IY+d) to accumulator.
+
+    And
+        AND   r         	Logical AND of register r with accumulator.
+        AND   n         	Logical AND of value n with accumulator.
+        AND   (HL)      	Logical AND of value at location (HL) with accumulator.
+        AND   (IX+d)   		Logical AND of value at location (IX+d) with accumulator.
+        AND   (IY+d)   		Logical AND of value at location (IY+d) with accumulator.
+
+    Compare
+        CP    r         	Compare register r with accumulator.
+        CP    n         	Compare value n with accumulator.
+        CP    (HL)      	Compare value at location (HL) with accumulator.
+        CP    (IX+d)   		Compare value at location (IX+d) with accumulator.
+        CP    (IY+d)   		Compare value at location (IY+d) with accumulator.
+
+        Compare iteratively
+            CPI            	Compare location (HL) and acc., increment HL, decrement BC.
+            CPD            	Compare location (HL) and acc., decrement HL and BC,
+
+        Compare iteratively repeated
+            CPIR        	Perform a CPI and repeat until BC=0.
+            CPDR        	Perform a CPD and repeat until BC=0.
+
+    Complement
+        CPL             	Complement accumulator (1's complement).
+
+    Decimal Adjust
+        DAA             	Decimal adjust accumulator.
+
+    In Port
+        IN    A,(n)    		Load the accumulator with input from device n.
+
+    Negate
+        NEG             	Negate accumulator (2's complement).
+
+    Or
+        OR    r         	Logical OR of register r and accumulator.
+        OR    n         	Logical OR of value n and accumulator.
+        OR    (HL)      	Logical OR of value at location (HL) and accumulator.
+        OR    (IX+d)   		Logical OR of value at location (IX+d) and accumulator.
+        OR    (IY+d)   		Logical OR of value at location (IY+d) and accumulator.
+
+    Out Port
+        OUT   (n),A    		Load output port (n) with accumulator.
+
+    Rotate Left
+        RLA             	Rotate left accumulator through carry.
+        RLD            		Rotate digit left and right between accumulator and (HL).
+
+    Rotate Left Circular
+        RLCA            	Rotate left circular accumulator.
+
+    Rotate Right
+        RRA             	Rotate right accumulator through carry.
+        RRD            		Rotate digit right and left between accumulator and (HL).
+
+    Rotate Right Circular
+        RRCA            	Rotate right circular accumulator.
+
+    Subtract
+        SUB   r         	Subtract register r from accumulator.
+        SUB   n         	Subtract value n from accumulator.
+        SUB   (HL)      	Subtract location (HL) from accumulator.
+        SUB   (IX+d)   		Subtract location (IX+d) from accumulator.
+        SUB   (IY+d)   		Subtract location (IY+d) from accumulator.
+
+    Subtract with Carry
+        SBC   A, r       	Subtract register r from accumulator with carry.
+        SBC   A, n       	Subtract value n from accumulator with carry.
+        SBC   A,(HL)    	Subtract value at location (HL) from accumulator with carry.
+        SBC   A,(IX+d) 		Subtract value at location (IX+d) from accumulator with carry.
+        SBC   A,(IY+d) 		Subtract value at location (IY+d) from accumulator with carry.
+
+    Transfer
+        LD    A,(BC)    	Load accumulator with value at location (BC).
+        LD    A,(DE)    	Load accumulator with value at location (DE).
+        LD    A,I       	Load accumulator with I.(interrupt vector register)
+        LD    A,(nn)   		Load accumulator with value at location nn.
+        LD    A,R       	Load accumulator with R.(memory refresh register)
+
+    Xor
+        XOR   r         	Exclusive OR register r and accumulator.
+        XOR   n         	Exclusive OR value n and accumulator.
+        XOR   (HL)      	Exclusive OR value at location (HL) and accumulator.
+        XOR   (IX+d)   		Exclusive OR value at location (IX+d) and accumulator.
+        XOR   (IY+d)   		Exclusive OR value at location (IY+d) and accumulator.
+
+Register8
+
+    Bit Operator
+        BIT   b, r       	Test bit b of register r.
+        RES   b, r       	Reset bit b of register r.
+        SET   b, r       	Set bit b of register r.
+
+    Decrement
+        DEC   r         	Decrement register r.
+
+    In Port
+        IN    r,(c)     	Load the register r with input from device (C).
+
+    Increment
+        INC   r         	Increment register r.
+	
+    Out Port
+        OUT   (C),r     	Load output port (C) with register r.
+
+    Rotate Left
+        RL    r         	Rotate left through register r.
+
+    Rotate Left Circular
+        RLC   r         	Rotate register r left circular.
+
+    Rotate Right
+        RR    r         	Rotate right through carry register r.
+
+    Rotate Right Circular
+        RRC   r         	Rotate register r right circular.
+
+    Shift Left Arithmetic
+        SLA   r         	Shift register r left arithmetic.
+
+    Shift Left Logical
+        SRL   r         	Shift register r right logical.
+
+    Shift Right Arithmetic
+        SRA   r         	Shift register r right arithmetic.
+
+    Transfer
+        LD    I, A       	Load I with accumulator.
+        LD    R, A       	Load R with accumulator.
+        LD    r, (HL)    	Load register r with value at location (HL).
+        LD    r, (IX+d) 	Load register r with value at location (IX+d).
+        LD    r, (IY+d) 	Load register r with value at location (IY+d).
+        LD    r, n       	Load register r with value n.
+        LD    r, r'      	Load register r with register r'.
+
+Register
+
+    Decrement
+        DEC   IX       		Decrement IX.
+        DEC   IY       		Decrement IY.
+        DEC   BC        	Decrement register pair BC.
+        DEC   DE        	Decrement register pair DE.
+        DEC   HL        	Decrement register pair HL.
+        DEC   SP        	Decrement register pair SP.
+
+    Exchange
+        EXX             	Exchange the contents of BC,DE,HL with BC',DE',HL'.
+
+    Increment
+        INC   IX       		Increment IX.
+        INC   IY       		Increment IY.
+        INC   BC       		Increment register pair BC.
+        INC   DE       		Increment register pair DE.
+        INC   HL       		Increment register pair HL.
+        INC   SP       		Increment register pair SP.
+
+    Pop
+        POP   IX       		Load IX with top of stack.
+        POP   IY       		Load IY with top of stack.
+        POP   BC       		Load register pair BC with top of stack.
+        POP   DE       		Load register pair DE with top of stack.
+        POP   HL       		Load register pair HL with top of stack.
+        POP   AF       		Load register pair AF with top of stack.
+
+    Push
+        PUSH  IX       		Load IX onto stack.
+        PUSH  IY       		Load IY onto stack.
+        PUSH  BC       		Load register pair BC onto stack.
+        PUSH  DE       		Load register pair DE onto stack.
+        PUSH  HL       		Load register pair HL onto stack.
+        PUSH  AF       		Load register pair AF onto stack.
+
+    Transfer value
+        LD    IX, nn    	Load IX with value nn.
+        LD    IY, nn    	Load IY with value nn.
+        LD    BC, nn    	Load register pair BC with nn.
+        LD    DE, nn    	Load register pair DE with nn.
+        LD    HL, nn    	Load register pair HL with nn.
+        LD    SP, nn    	Load register pair SP with nn.
+
+    Transfer memory
+        LD    IX, (nn)  	Load IX with value at location (nn).
+        LD    IY, (nn)  	Load IY with value at location (nn).
+        LD    BC, (nn)  	Load register pair BC with value at location (nn).
+        LD    DE, (nn)  	Load register pair DE with value at location (nn).
+        LD    HL, (nn)  	Load HL with value at location (nn). (L-first)
+        LD    SP, (nn)  	Load register pair SP with value at location (nn).
+
+    AF
+        Exchange
+            EX    AF, AF'    	Exchange the contents of AF and AF'.
+
+    HL
+        Add
+            ADD   HL, BC     	Add register pair BC to HL.
+            ADD   HL, DE     	Add register pair DE to HL.
+            ADD   HL, HL     	Add register pair HL to HL.
+            ADD   HL, SP     	Add register pair SP to HL.
+
+            Add with carry
+                ADC   HL, BC    Add with carry register pair BC to HL.
+                ADC   HL, DE    Add with carry register pair DE to HL.
+                ADC   HL, HL    Add with carry register pair HL to HL.
+                ADC   HL, SP    Add with carry register pair SP to HL.
+
+        Bit Operator
+            BIT   b,(HL)    	Test bit b of location (HL).
+            RES   b,(HL)    	Reset bit b in value at location (HL).
+            SET   b,(HL)    	Set bit b of location (HL).
+
+        Exchange
+            EX    DE,HL     	Exchange the contents of DE and HL.
+
+        Rotate Left
+            RL    (HL)      	Rotate left through value at location (HL).
+
+        Rotate Left Circular
+            RLC   (HL)      	Rotate location (HL) left circular.
+
+        Rotate Right
+            RR    (HL)      	Rotate right through carry location (HL).
+
+        Rotate Right Circular
+            RRC   (HL)      	Rotate value at location (HL) right circular.
+
+        Shift Left Logical
+            SRL   (HL)      	Shift value at location (HL) right logical.
+
+        Shift Left Arithmetic
+            SLA   (HL)      	Shift value at location (HL) left arithmetic.
+
+        Subtract with Carry
+            SBC   HL,BC     	Subtract register pair BC from HL with carry.
+            SBC   HL,DE     	Subtract register pair DE from HL with carry.
+            SBC   HL,HL     	Subtract register pair HL from HL with carry.
+            SBC   HL,SP     	Subtract register pair SP from HL with carry.
+
+    IX
+        Add
+            ADD   IX,BC     	Add register pair BC to IX.
+            ADD   IX,DE     	Add register pair DE to IX.
+            ADD   IX,IX     	Add register pair IX to IX.
+            ADD   IX,SP     	Add register pair SP to IX.
+
+        Bit Operator
+            BIT   b,(IX+d) 	20 Test bit b of location (IX+d).
+            RES   b,(IX+d) 	Reset bit b in value at location (IX+d).
+            SET   b,(IX+d) 	Set bit b of location (IX+d).
+
+        Rotate Left
+            RL    (IX+d)   	Rotate left through value at location (IX+d).
+
+        Rotate Left Circular
+            RLC   (IX+d)   	Rotate location (IX+d) left circular.
+
+        Rotate Right
+            RR    (IX+d)   	Rotate right through carry location (IX+d).
+
+        Rotate Right Circular
+            RRC   (IX+d)   	Rotate value at location (IX+d) right circular.
+
+        Shift Left Logical
+            SRL   (IX+d)   	Shift value at location (IX+d) right logical.
+
+        Shift Left Arithmetic
+            SLA   (IX+d)   	Shift value at location (IX+d) left arithmetic.
+
+    IY
+        Add
+            ADD   IY,BC     	Add register pair BC to IY.
+            ADD   IY,DE     	Add register pair DE to IY.
+            ADD   IY,IY     	Add register pair IY to IY.
+            ADD   IY,SP     	Add register pair SP to IY.
+
+        Bit Operator
+            BIT   b,(IY+d) 	20 Test bit b of location (IY+d).
+            RES   b,(IY+d) 	Reset bit b in value at location (IY+d).
+            SET   b,(IY+d) 	Set bit b of location (IY+d).
+
+        Rotate Left
+            RL    (IY+d)   	Rotate left through value at location (IY+d).
+
+        Rotate Left Circular
+            RLC   (IY+d)   	Rotate location (IY+d) left circular.
+
+        Rotate Right
+            RR    (IY+d)   	Rotate right through carry location (IY+d).
+
+        Rotate Right Circular
+            RRC   (IY+d)   	Rotate value at location (HL+d) right circular.
+
+        Shift Left Logical
+            SRL   (IY+d)   	Shift value at location (IY+d) right logical.
+
+        Shift Left Arithmetic
+            SLA   (IY+d)   	Shift value at location (IY+d) left arithmetic.
+
+    SP
+        Transfer Register
+            LD    SP,HL     	Load SP with HL.
+            LD    SP,IX    	Load SP with IX.
+            LD    SP,IY    	Load SP with IY.
+
+
+(Register)
+
+    (BC)
+        Transfer Pointer Register 8-bit
+            LD    (BC),A    	Load location (BC) with accumulator.
+
+    (DE)
+        Transfer Pointer Register 8-bit
+            LD    (DE),A    	Load location (DE) with accumulator.
+
+        Transfer Pointer Register iteratively
+            LDD             	Load location (DE) with location (HL), decrement DE,HL,BC.
+            LDI             	Load location (DE) with location (HL), incr DE,HL; decr BC.
+
+            Transfer Pointer Register iteratively repeated
+                LDDR        	21, Perform an LDD and repeat until BC=0.
+                LDIR        	21,Perform an LDI and repeat until BC=0.
+    (HL)
+        Decrement
+            DEC   (HL)      	Decrement value at location (HL).
+
+        Increment
+            INC   (HL)      	Increment location (HL).
+
+        In Port iteratively
+            IND             	(HL)=Input from port (C). Decrement HL and B.
+            INDR        	Perform an IND and repeat until B=0.
+
+        In Port iteratively repeated
+            INI             	(HL)=Input from port (C). HL=HL+1. B=B-1.
+            INIR        	Perform an INI and repeat until B=0.
+
+        Out Port iteratively
+            OUTD            	Load output port (C) with (HL), decrement HL and B.
+            OUTI            	Load output port (C) with (HL), incr HL, decr B.
+
+        Out Port iteratively repeated
+            OTDR        	Perform an OUTD and repeat until B=0.
+            OTIR        	Perform an OTI and repeat until B=0.
+
+        Shift Right Arithmetic
+            SRA   (HL)      	Shift value at location (HL) right arithmetic.
+
+        Transfer Pointer Register 8-bit
+            LD    (HL),r    	Load location (HL) with register r.
+
+    (IX+d)
+        Decrement
+            DEC   (IX+d)   	Decrement value at location (IX+d).
+
+        Increment
+            INC   (IX+d)   	Increment location (IX+d).
+
+        Shift Right Arithmetic
+            SRA   (IX+d)   	Shift value at location (IX+d) right arithmetic.
+
+        Transfer Pointer Register 8-bit
+            LD    (IX+d),r 	Load location (IX+d) with register r.
+
+    (IY+d)
+        Decrement
+            DEC   (IY+d)   	Decrement value at location (IY+d).
+
+        Increment
+            INC   (IY+d)   	Increment location (IY+d).
+
+        Shift Right Arithmetic
+            SRA   (IY+d)   	Shift value at location (IY+d) right arithmetic.
+
+        Transfer Pointer Register 8-bit
+            LD    (IY+d),r 	Load location (IY+d) with register r.
+
+    (SP)
+        Exchange
+            EX    (SP), HL  	Exchange the location (SP) and HL.
+            EX    (SP), IX  	Exchange the location (SP) and IX.
+            EX    (SP), IY  	Exchange the location (SP) and IY.
+
+Memory
+    Transfer Register8
+        LD    (nn),A   		Load location (nn) with accumulator.
+
+    Transfer Register
+        LD    (nn), BC  	Load location (nn) with register pair BC.
+        LD    (nn), DE  	Load location (nn) with register pair DE.
+        LD    (nn), HL   	Load location (nn) with HL.
+        LD    (nn), SP  	Load location (nn) with register pair SP.
+        LD    (nn), IX  	Load location (nn) with IX.
+        LD    (nn), IY  	Load location (nn) with IY.
+
+Interrupts
+    Disable interrupts
+        DI              	Disable interrupts. (except NMI at 0066h)
+    Enable interrupts
+        EI              	Enable interrupts.
+    Interrupt Mode
+        IM    0         	Set interrupt mode 0. (instruction on data bus by int device)
+        IM    1         	Set interrupt mode 1. (RST 38)
+        IM    2         	Set interrupt mode 2. (vector jump)
+
+Control
+
+    Halt
+        HALT            	Halt computer and wait for interrupt.
+
+    Restart
+        RST   00h       	Restart to location 0000h.
+        RST   08h       	Restart to location 0008h.
+        RST   10h       	Restart to location 0010h.
+        RST   18h       	Restart to location 0018h.
+        RST   20h       	Restart to location 0020h.
+        RST   28h       	Restart to location 0028h.
+        RST   30h       	Restart to location 0030h.
+        RST   38h       	Restart to location 0038h.
+
+    Call
+        CALL  nn       		Call subroutine at location.
+
+        Call conditionally
+            CALL  cc, nn    	Call subroutine at location nn if condition CC is true.
+
+    Jump
+        Jump Absolute
+            JP    nn       	Unconditional jump to location nn
+
+            Jump Absolute Conditionally
+                JP    cc, nn    Jump to location nn if condition cc is true.
+
+        Jump Absolute Pointer
+            JP    (HL)      	Unconditional jump to location (HL).
+            JP    (IX)      	Unconditional jump to location (IX).
+            JP    (IY)      	Unconditional jump to location (IY).
+
+        Jump Relative
+            JR    n         	Unconditional jump relative to PC+n.
+
+            Jump Relative Conditionally (Restricted)
+                JR    C, n    	Jump relative to PC+n if carry=1.
+                JR    NC, n   	Jump relative to PC+n if carry=0.
+                JR    NZ, n   	Jump relative to PC+n if non zero (Z=0).
+                JR    Z, n    	Jump relative to PC+n if zero (Z=1).
+
+            Jump Relative iteratively repeated
+                DJNZ  n      	Decrement B and jump relative if B<>0.
+
+    No operation
+        NOP             	No operation.
+
+    Return
+        RET            		Return from subroutine.
+        RETI           		Return from interrupt.
+        RETN           		Return from non-maskable interrupt.
+
+        Return conditionally
+            RET   cc     	Return from subroutine if condition cc is true.
+
+
+
+    Transfer Pointer Register 8-bit
+        LD    (HL),n   		Load location (HL) with value n.
+        LD    (IX+d), n 	Load location (IX+d) with value n.
+        LD    (IY+d), n 	Load location (IY+d) with value n.

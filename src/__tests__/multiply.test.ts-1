@@ -1,0 +1,11 @@
+import { mult } from "../multiply";
+
+describe('testing multiply and divide', () => {
+
+  test('naive 8 bit mult', () => {
+    const expected = 16;
+    const actual = mult(16,16);
+    expect(actual).toEqual(expected);
+  });
+
+})

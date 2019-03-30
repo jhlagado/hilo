@@ -1,0 +1,16 @@
+{
+  "name": "hilo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.11",
+    "ohm-js": "^0.14.0",
+    "src": "^1.1.2",
+    "ts-node": "^8.0.3",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.2.4"
+  }
+}
