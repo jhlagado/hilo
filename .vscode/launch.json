@@ -4,7 +4,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Jest All",
+            "name": "Hilo Jest",
             "program": "/usr/local/bin/jest",
             "args": [
                 "${relativeFile}",
@@ -15,12 +15,14 @@
             "internalConsoleOptions": "neverOpen",
             "cwd": "${workspaceRoot}",
             "disableOptimisticBPs": true,
-          },
-          {
+        },
+        {
             "name": "Hilo",
             "type": "node",
             "request": "launch",
-            "args": ["${relativeFile}"],
+            "args": [
+                "${relativeFile}"
+            ],
             "runtimeArgs": [
                 "--nolazy",
                 "-r",
